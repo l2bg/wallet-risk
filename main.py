@@ -262,6 +262,10 @@ def health():
 # bypassing the payment rail and calling this directly.
 # ============================================================
 
+@app.get("/score")
+async def score_health():
+    return {"status": "ok", "endpoint": "wallet-risk /score", "method": "POST"}
+
 @app.post("/score")
 async def score_wallet(request: Request):
 
